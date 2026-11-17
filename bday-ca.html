@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🎂 Birthday Return filed for Mohit Cholera</title>
+<meta name="description" content="Your annual Birthday Return is due today. Open it and file it yourself.">
+<meta property="og:title" content="🎂 Your Birthday Return is due today">
+<meta property="og:description" content="No late fee. No notice. Just cake. Open and file it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Comedge Labs">
+<meta property="og:image" content="https://comedgelabs.github.io/RH/bday-preview.jpg"><!-- upload bday-preview.jpg into the same RH folder -->
+<meta property="og:image:secure_url" content="https://comedgelabs.github.io/RH/bday-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E2A47">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E2A47; --ink2:#163B63; --paper:#FFFDF6; --line:#E6DFCC; --muted:#6B7A8C;
+  --green:#138A5B; --green2:#1FBF7F; --red:#D6334B; --gold:#F5B82E; --pink:#FF6B9A; --sky:#3FA9F5;
+  --sans:'DM Sans',system-ui,sans-serif; --display:'Fraunces',serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:radial-gradient(120% 70% at 50% 0%,#1D4C7C 0%,var(--ink) 62%) fixed;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+button,input{font-family:inherit}
+button{cursor:pointer;border:0}
+a{color:inherit}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:20}
+.wrap{max-width:440px;margin:0 auto;padding:18px 16px 48px;position:relative;z-index:1}
+.top{display:flex;justify-content:space-between;align-items:center;color:#9FC3E6;font-size:12.5px;margin-bottom:14px}
+.top b{color:var(--gold)}
+.pill{background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px}
+
+/* ---------- the return form ---------- */
+.form{background:var(--paper);border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden;position:relative}
+.form-h{background:linear-gradient(90deg,var(--ink2),#21558B);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.form-h .t{font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+.form-h .t small{display:block;opacity:.7;font-size:10.5px;letter-spacing:.1em}
+.badge{background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;animation:blink 1.4s infinite}
+.filed .badge{background:var(--green);animation:none}
+@keyframes blink{50%{opacity:.55}}
+.form-b{padding:14px 16px 16px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.row span:first-child{color:var(--muted)}
+.row b{text-align:right;font-weight:700}
+.row .mono{font-family:var(--mono);font-size:13px}
+.big{font-family:var(--display);font-size:26px;line-height:1.15;font-weight:800;margin:4px 0 2px}
+.sub{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+
+.hold{position:relative;margin-top:14px;width:100%;height:58px;border-radius:14px;background:var(--ink);color:#fff;font-weight:700;font-size:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.hold .fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--green),var(--green2))}
+.hold .lbl{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:8px;height:100%}
+.status{font-family:var(--mono);font-size:12px;color:var(--muted);min-height:18px;margin-top:8px;text-align:center}
+
+.stamp{position:absolute;right:14px;top:92px;border:4px solid var(--green);color:var(--green);font-family:var(--mono);font-weight:700;padding:6px 12px;border-radius:10px;transform:rotate(-14deg) scale(3);opacity:0;text-align:center;line-height:1.1;background:rgba(255,253,246,.85);pointer-events:none}
+.stamp small{display:block;font-size:9.5px;letter-spacing:.06em}
+.stamp b{font-size:24px;letter-spacing:.08em}
+.filed .stamp{animation:stamp .45s cubic-bezier(.3,1.5,.5,1) forwards}
+@keyframes stamp{to{transform:rotate(-14deg) scale(1);opacity:1}}
+.filed .hold{display:none}
+
+/* ---------- sections that appear later ---------- */
+.step{display:none;margin-top:18px}
+.step.on{display:block;animation:up .6s ease both}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+.card{background:var(--paper);border-radius:18px;padding:18px 16px;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+.card h2{font-family:var(--display);font-size:22px;line-height:1.2;margin-bottom:4px}
+.card p{font-size:14px;color:var(--muted);line-height:1.5}
+
+/* cake */
+.cake{position:relative;width:100%;max-width:330px;margin:62px auto 0;aspect-ratio:330/250}
+.cake svg{position:absolute;inset:0;width:100%;height:100%}
+.candles{position:absolute;left:0;right:0;top:0;height:46%;display:flex;justify-content:center;gap:4%;padding:0 10%}
+.cd{position:relative;flex:1;max-width:46px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;background:none}
+.cd .stick{width:12px;height:56%;border-radius:3px;background:repeating-linear-gradient(135deg,#fff 0 6px,var(--pink) 6px 12px)}
+.cd .fl{width:16px;height:24px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0 18%,#FFE07A 30%,#FF9A2E 70%);box-shadow:0 0 16px 6px rgba(255,170,60,.55);animation:flick 1s ease-in-out infinite;transform-origin:50% 100%;margin-bottom:2px}
+.cd .tag{position:absolute;top:-6px;left:50%;transform:translate(-50%,-100%);font-size:10px;font-weight:700;white-space:nowrap;background:var(--ink);color:#fff;padding:3px 6px;border-radius:6px}
+.cd:nth-child(even) .tag{top:-30px}
+.cd.out .fl{animation:none;opacity:0;transform:scale(.2);transition:all .3s}
+.cd.out .tag{background:var(--green);text-decoration:line-through}
+.cd.out::after{content:"";position:absolute;bottom:58%;left:50%;width:6px;height:26px;margin-left:-3px;border-radius:3px;background:linear-gradient(transparent,rgba(120,120,120,.5));animation:smoke 1.2s forwards}
+@keyframes flick{50%{transform:scale(.92,1.08) skewX(3deg)}}
+@keyframes smoke{to{transform:translateY(-30px) scaleX(2.4);opacity:0}}
+.count{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* invoice */
+.inv{font-size:13.5px}
+.inv .ih{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.inv .ih .n{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin-top:4px}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:6px 0;border-bottom:1px solid var(--line)}
+th:last-child,td:last-child{text-align:right}
+td{padding:9px 0;border-bottom:1px dashed var(--line);vertical-align:top}
+td small{display:block;color:var(--muted);font-size:11.5px;font-family:var(--mono)}
+td.r{font-family:var(--mono);font-weight:700;color:var(--green);white-space:nowrap;padding-left:8px}
+.tot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:10px 12px;border-radius:10px;background:#EAF7F0}
+.tot b{font-family:var(--display);font-size:20px;color:var(--green)}
+.note{font-size:12px;color:var(--muted);margin-top:8px;font-style:italic}
+
+.wish{text-align:center;background:linear-gradient(160deg,#FFF6E0,#FFE9F1)}
+.wish .hb{font-family:var(--display);font-size:clamp(30px,9vw,40px);font-weight:800;line-height:1.05;color:var(--ink)}
+.wish .nm{font-family:'Caveat',cursive;font-size:clamp(34px,10vw,44px);color:var(--red);margin:2px 0 8px;word-break:break-word}
+.wish .msg{font-size:15.5px;color:#3B4A5C;line-height:1.55;max-width:340px;margin:0 auto}
+.wish .sig{font-family:'Caveat',cursive;font-size:24px;color:var(--ink2);margin-top:10px}
+
+/* actions */
+.field{display:block;margin-top:10px}
+.field span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.field input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;background:#fff;outline:none;color:var(--ink)}
+.field input:focus{border-color:var(--sky)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:12px;padding:14px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn.wa{background:#25D366;color:#063A1E}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ghost{background:#EEF3F8;color:var(--ink);font-weight:500;font-size:14.5px}
+.btn svg{width:20px;height:20px}
+.err{color:var(--red);font-size:13px;min-height:16px;margin-top:6px}
+.ok{color:var(--green);font-size:13.5px;text-align:center;min-height:18px;margin-top:8px}
+
+.cl{background:linear-gradient(160deg,#10365C,#0B2340);color:#fff}
+.cl h2{color:#fff}
+.cl p{color:#B8CDE3}
+.cl ul{list-style:none;margin:12px 0 4px;display:grid;gap:8px}
+.cl li{display:flex;gap:10px;font-size:14px;line-height:1.4}
+.cl li i{font-style:normal;flex:0 0 26px;height:26px;border-radius:8px;background:rgba(245,184,46,.18);display:grid;place-items:center}
+.cl .price{margin-top:12px;border:1px dashed rgba(245,184,46,.6);border-radius:12px;padding:10px 12px;font-size:14px;color:#FFE6A8}
+.cl .btn.gold{background:linear-gradient(180deg,#FFCF5A,var(--gold));color:#2A1A00}
+.foot{text-align:center;font-size:11.5px;color:#88A6C6;margin-top:22px}
+.foot a{color:var(--gold);text-decoration:none}
+.replay{display:block;margin:14px auto 0;background:none;color:#9FC3E6;font-size:13px;text-decoration:underline}
+/* ---------- Chashmu, the character ---------- */
+.wrap{padding-bottom:150px}
+.ch{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ch svg{width:100%;height:auto;overflow:visible;display:block}
+.ch .c-head{animation:bob 2.8s ease-in-out infinite;transform-box:view-box;transform-origin:100px 170px}
+@keyframes bob{50%{transform:translateY(-3px) rotate(-1.5deg)}}
+.ch .c-eyes{animation:blink 4.2s infinite;transform-box:view-box;transform-origin:100px 104px}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.ch .c-pups{transition:transform .35s}
+.ch .c-specs,.ch .c-brows{transition:transform .25s}
+.ch.push .c-specs{transform:translateY(-6px)}
+.ch.wow .c-brows{transform:translateY(-9px)}
+.ch .c-mouth{transform-box:fill-box;transform-origin:50% 0}
+.ch.talk .c-mouth{animation:talk .16s infinite alternate}
+@keyframes talk{from{transform:scaleY(.35)}to{transform:scaleY(1.15)}}
+.ch .c-stache{transform-box:fill-box;transform-origin:50% 50%}
+.ch.talk .c-stache{animation:stache .16s infinite alternate}
+@keyframes stache{to{transform:translateY(1.5px) scaleX(1.04)}}
+.ch .c-wave{transform-box:view-box;transform-origin:54px 196px}
+.ch.wave .c-wave{animation:wave .32s ease-in-out 6 alternate}
+@keyframes wave{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+.ch .c-hat{opacity:0;transform:translateY(-34px) rotate(-20deg);transition:all .55s cubic-bezier(.3,1.6,.5,1);transform-box:view-box;transform-origin:104px 40px}
+.ch.party .c-hat{opacity:1;transform:rotate(8deg)}
+.ch.jump svg{animation:jump .55s cubic-bezier(.3,1.4,.5,1) 2}
+@keyframes jump{40%{transform:translateY(-20px)}}
+.ch.type .c-calc{animation:shk .09s infinite}
+@keyframes shk{50%{transform:translate(1px,-1px)}}
+.hero-ch{display:flex;align-items:flex-end;gap:8px;margin:0 0 14px}
+.hero-ch .ch{flex:0 0 118px;width:118px}
+.bub{position:relative;background:#fff;color:var(--ink);border-radius:18px 18px 18px 4px;padding:11px 13px;font-size:14.5px;line-height:1.42;font-weight:500;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.hero-ch .bub{margin-bottom:64px;flex:1;min-height:44px}
+.bub b{color:var(--red)}
+.dock{position:fixed;right:8px;bottom:6px;z-index:15;display:flex;flex-direction:row-reverse;align-items:flex-end;gap:2px;transform:translateY(150%);transition:transform .6s cubic-bezier(.3,1.3,.5,1);pointer-events:none}
+.dock.on{transform:none}
+.dock .ch{width:88px;flex:0 0 88px;pointer-events:auto}
+.dock .bub{max-width:min(240px,64vw);margin-bottom:50px;border-radius:18px 18px 4px 18px;opacity:0;transform:scale(.85);transform-origin:100% 100%;transition:all .25s}
+.dock .bub.on{opacity:1;transform:none}
+.tapme{font-size:11px;color:#9FC3E6;text-align:center;margin-top:4px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="wrap">
+  <div class="top"><span>From <b id="fromTop"></b></span><span class="pill">FY 2026-27 · Annual</span></div>
+
+  <!-- 0 · CHASHMU SAYS HELLO -->
+  <div class="hero-ch">
+    <div><div class="ch" data-ch></div><div class="tapme">tap me</div></div>
+    <div class="bub" id="heroBub"></div>
+  </div>
+
+  <!-- 1 · THE RETURN -->
+  <div class="form" id="form">
+    <div class="form-h">
+      <div class="t"><small>FORM</small>GSTR-🎂 · BIRTHDAY RETURN</div>
+      <div class="badge" id="badge">DUE TODAY</div>
+    </div>
+    <div class="form-b">
+      <div class="big" id="bigName"></div>
+      <div class="sub" id="role"></div>
+      <div class="row"><span>Return period</span><b class="mono" id="period"></b></div>
+      <div class="row"><span>Age added this year</span><b>+1 (no late fee)</b></div>
+      <div class="row"><span>Taxable value of wishes</span><b class="mono">Unlimited</b></div>
+      <div class="row"><span>Tax payable</span><b class="mono" style="color:var(--green)">₹0.00 · Exempt</b></div>
+      <button class="hold" id="hold" aria-label="Press and hold to file the birthday return">
+        <span class="fill" id="fill"></span>
+        <span class="lbl" id="holdLbl">✋ Press &amp; hold to file</span>
+      </button>
+      <div class="status" id="status">Takes 2 seconds. Faster than the real portal 😉</div>
+    </div>
+    <div class="stamp"><small>BIRTHDAY RETURN</small><b>FILED ✓</b><small id="arn"></small></div>
+  </div>
+
+  <!-- 2 · BLOW OUT THE STRESS -->
+  <div class="step" id="s2">
+    <div class="card">
+      <h2>Now blow out the stress 🎂</h2>
+      <p>Every CA's cake comes with these. Tap each candle to put it out.</p>
+      <div class="cake">
+        <svg viewBox="0 0 330 250" aria-hidden="true">
+          <ellipse cx="165" cy="236" rx="150" ry="12" fill="rgba(0,0,0,.12)"/>
+          <rect x="40" y="150" width="250" height="80" rx="14" fill="#F7A8C4"/>
+          <rect x="40" y="150" width="250" height="16" rx="8" fill="#FFF1F6"/>
+          <path d="M40 166 q15 18 31 0 q15 18 31 0 q15 18 31 0 q15 18 31 0 q15 18 31 0 q15 18 31 0 q15 18 31 0 q15 18 32 0 v-10 h-250z" fill="#FFF1F6"/>
+          <rect x="70" y="112" width="190" height="44" rx="12" fill="#7FC7F7"/>
+          <path d="M70 124 q12 14 24 0 q12 14 24 0 q12 14 24 0 q12 14 24 0 q12 14 23 0 q12 14 24 0 q12 14 24 0 q12 14 23 0 v-12 h-190z" fill="#E8F6FF"/>
+          <g fill="#F5B82E" font-family="JetBrains Mono,monospace" font-weight="700" font-size="17" text-anchor="middle">
+            <text x="165" y="205">₹ 0 TAX · 100% JOY</text>
+          </g>
+          <g fill="#fff"><circle cx="62" cy="190" r="3"/><circle cx="268" cy="190" r="3"/><circle cx="96" cy="215" r="2.5"/><circle cx="234" cy="215" r="2.5"/></g>
+        </svg>
+        <div class="candles" id="candles"></div>
+      </div>
+      <div class="count" id="count"></div>
+    </div>
+  </div>
+
+  <!-- 3 · INVOICE OF WISHES -->
+  <div class="step" id="s3">
+    <div class="card inv">
+      <div class="ih">
+        <div><h2 style="margin:0">Tax Invoice</h2><p style="font-size:12.5px">Supply of birthday wishes</p></div>
+        <div class="n">Inv no. <span id="invNo"></span><br>Place of supply: Your heart<br>Reverse charge: No</div>
+      </div>
+      <table>
+        <thead><tr><th>Description</th><th>Rate</th></tr></thead>
+        <tbody id="items"></tbody>
+      </table>
+      <div class="tot"><span>Total payable</span><b>Priceless</b></div>
+      <div class="note">Input Tax Credit available for every client you've saved from a notice this year.</div>
+    </div>
+    <div class="card wish" style="margin-top:14px">
+      <div class="hb">Happy Birthday</div>
+      <div class="nm" id="wishName"></div>
+      <p class="msg" id="wishMsg"></p>
+      <div class="sig" id="sig"></div>
+    </div>
+  </div>
+
+  <!-- 4 · ACTIONS -->
+  <div class="step" id="s4">
+    <div class="card">
+      <h2 id="sendTitle"></h2>
+      <p id="sendSub"></p>
+      <label class="field"><span>Your name</span><input id="me" maxlength="40" autocomplete="name"></label>
+      <label class="field"><span>Your wish (optional)</span><input id="myWish" maxlength="120" placeholder="Many happy returns… filed on time!"></label>
+      <a class="btn wa" id="sendBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg><span id="sendBtnT"></span></a>
+      <div class="err" id="err1"></div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h2>Is someone's birthday coming up?</h2>
+      <p>Send them their own birthday return. Same fun, their name on it.</p>
+      <label class="field"><span>Their name</span><input id="them" maxlength="40" autocomplete="off"></label>
+      <label class="field"><span>What they do (optional)</span><input id="themRole" maxlength="40" placeholder="e.g. CA, Doctor, Gym owner"></label>
+      <a class="btn ink" id="passBtn" href="#" target="_blank" rel="noopener">🎁 Send them theirs on WhatsApp</a>
+      <div class="err" id="err2"></div>
+    </div>
+
+    <div class="card cl" style="margin-top:14px">
+      <h2>Want Chashmu to wish your clients too? 🤓</h2>
+      <p>Chashmu works for <b style="color:var(--gold)">Chat Lead</b> by Comedge Labs. He changes costume for every profession: a return for a CA, a prescription for a doctor, a workout plan for a gym.</p>
+      <ul>
+        <li><i>🎯</i><span>Every client who opens it sees <b>your</b> brand, not a forwarded GIF</span></li>
+        <li><i>💬</i><span>Replies land straight on your WhatsApp, with their name</span></li>
+        <li><i>🔁</i><span>People pass it on, so it reaches their friends too</span></li>
+      </ul>
+      <div class="price">🎂 Personal greeting from <b>₹199</b> · Branded for your business from <b>₹2,999</b></div>
+      <a class="btn gold" id="clBtn" href="#" target="_blank" rel="noopener">Get one made for me</a>
+    </div>
+
+    <button class="replay" id="replay">↺ File it again</button>
+    <p class="foot"><a href="https://comedgelabs.com" target="_blank" rel="noopener">Comedge Labs</a> · made with Chat Lead</p>
+  </div>
+</div>
+
+<div class="dock" id="dock"><div class="ch" data-ch></div><div class="bub" id="dockBub"></div></div>
+
+<script>
+/* ============ CONFIG · change per person ============ */
+const CONFIG = {
+  name: 'Mohit Cholera',
+  role: 'Chartered Accountant · GST Consultant',
+  from: 'Viplav',
+  birthdayWhatsApp: '',          // Mohit's number (digits, with 91). Empty = WhatsApp lets the sender pick the chat
+  comedgeWhatsApp: '919581173078',
+  baseUrl: ''                    // where this page is hosted, e.g. https://comedgelabs.github.io/bday/ca.html. Empty = this page's address
+};
+
+/* ============ setup ============ */
+const $ = id => document.getElementById(id);
+const P = new URLSearchParams(location.search);
+const clean = s => (s || '').replace(/[<>{}]/g, '').replace(/\s+/g, ' ').trim().slice(0, 40);
+const S = {
+  name: clean(P.get('name')) || CONFIG.name,
+  role: clean(P.get('role')) || CONFIG.role,
+  from: clean(P.get('from')) || CONFIG.from
+};
+const first = S.name.split(' ')[0];
+const isCA = /\b(ca|chartered|gst|tax|account)/i.test(S.role);
+const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+const now = new Date();
+const ymd = now.toISOString().slice(0,10).replace(/-/g,'');
+const code = (s => { let h = 7; for (const c of s) h = (h * 31 + c.codePointAt(0)) >>> 0; return (h % 100000).toString().padStart(5,'0'); })(S.name);
+
+document.title = '🎂 Birthday Return filed for ' + S.name;
+$('fromTop').textContent = S.from;
+$('bigName').textContent = S.name;
+$('role').textContent = S.role;
+$('period').textContent = now.toLocaleDateString('en-IN', { day:'2-digit', month:'short' }) + ' → next ' + now.toLocaleDateString('en-IN', { day:'2-digit', month:'short' });
+$('arn').textContent = 'ARN BD' + ymd + code;
+$('invNo').textContent = 'HB/' + now.getFullYear() + '/' + code;
+$('wishName').textContent = S.name;
+$('sig').textContent = '— ' + S.from;
+$('me').value = store.get('bd_me') || '';
+
+/* ============ CHASHMU · the character (drawn in code) ============ */
+const CHASHMU = `<svg viewBox="0 -24 200 274" aria-label="Chashmu, a cheerful accountant with big round specs">
+ <rect x="88" y="158" width="24" height="24" rx="6" fill="#E9B88E"/>
+ <path d="M44 250 Q46 186 100 178 Q154 186 156 250Z" fill="#FFFFFF"/>
+ <path d="M44 250 Q46 186 92 179 L100 250Z" fill="#23466E"/>
+ <path d="M156 250 Q154 186 108 179 L100 250Z" fill="#23466E"/>
+ <rect x="62" y="206" width="20" height="5" rx="2" fill="#1A3554"/><rect x="66" y="196" width="3.5" height="12" rx="1.5" fill="#D6334B"/><rect x="72" y="198" width="3.5" height="10" rx="1.5" fill="#3FA9F5"/>
+ <circle cx="100" cy="204" r="2.4" fill="#F5B82E"/><circle cx="100" cy="222" r="2.2" fill="#F5B82E"/>
+ <path d="M100 186 L86 178 L86 194Z M100 186 L114 178 L114 194Z" fill="#D6334B"/><circle cx="100" cy="186" r="4" fill="#B0233A"/>
+ <g class="c-wave"><path d="M54 198 Q30 188 28 162" stroke="#23466E" stroke-width="16" fill="none" stroke-linecap="round"/><circle cx="28" cy="154" r="11" fill="#F3C9A0"/></g>
+ <g class="c-calc"><g transform="rotate(-8 150 222)">
+  <rect x="128" y="198" width="46" height="52" rx="7" fill="#39414D"/>
+  <rect x="133" y="203" width="36" height="13" rx="2" fill="#BFE6A6"/>
+  <text class="c-scr" x="166" y="213.5" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" text-anchor="end" fill="#20351A">₹0</text>
+  <g fill="#C9CED6"><rect x="134" y="221" width="9" height="6" rx="1.5"/><rect x="146" y="221" width="9" height="6" rx="1.5"/><rect x="158" y="221" width="9" height="6" rx="1.5" fill="#F5B82E"/><rect x="134" y="230" width="9" height="6" rx="1.5"/><rect x="146" y="230" width="9" height="6" rx="1.5"/><rect x="158" y="230" width="9" height="6" rx="1.5"/><rect x="134" y="239" width="9" height="6" rx="1.5"/><rect x="146" y="239" width="9" height="6" rx="1.5"/><rect x="158" y="239" width="9" height="6" rx="1.5" fill="#1FBF7F"/></g>
+ </g></g>
+ <path d="M146 198 Q166 206 140 226" stroke="#23466E" stroke-width="16" fill="none" stroke-linecap="round"/><circle cx="136" cy="226" r="10" fill="#F3C9A0"/>
+ <g class="c-head">
+  <circle cx="43" cy="108" r="11" fill="#E9B88E"/><circle cx="157" cy="108" r="11" fill="#E9B88E"/>
+  <ellipse cx="100" cy="102" rx="58" ry="62" fill="#F3C9A0"/>
+  <path d="M44 96 Q40 50 80 40 Q104 30 128 40 Q160 52 156 96 Q150 70 136 62 Q120 74 96 66 Q72 60 56 74 Q48 82 44 96Z" fill="#2B2B2B"/>
+  <path d="M98 40 Q92 24 106 18 Q100 28 110 36Z" fill="#2B2B2B"/>
+  <g transform="rotate(-35 160 80)"><rect x="150" y="76" width="34" height="7" rx="1.5" fill="#F5B82E"/><path d="M184 76 L193 79.5 L184 83Z" fill="#F3D9B0"/><circle cx="192" cy="79.5" r="1.3" fill="#333"/><rect x="146" y="76" width="5" height="7" fill="#FF8FA8"/></g>
+  <circle cx="60" cy="132" r="9" fill="#FF9AA2" opacity=".45"/><circle cx="140" cy="132" r="9" fill="#FF9AA2" opacity=".45"/>
+  <g class="c-brows" stroke="#2B2B2B" stroke-width="6" fill="none" stroke-linecap="round"><path d="M58 76 Q74 66 92 76"/><path d="M108 76 Q126 66 142 76"/></g>
+  <g class="c-eyes">
+   <circle cx="78" cy="104" r="12" fill="#fff"/><circle cx="122" cy="104" r="12" fill="#fff"/>
+   <g class="c-pups"><circle cx="79" cy="105" r="6" fill="#1B1B1B"/><circle cx="123" cy="105" r="6" fill="#1B1B1B"/><circle cx="81.5" cy="102.5" r="2" fill="#fff"/><circle cx="125.5" cy="102.5" r="2" fill="#fff"/></g>
+  </g>
+  <g class="c-specs">
+   <circle cx="78" cy="104" r="21" fill="rgba(190,225,255,.22)" stroke="#1B1B1B" stroke-width="6"/>
+   <circle cx="122" cy="104" r="21" fill="rgba(190,225,255,.22)" stroke="#1B1B1B" stroke-width="6"/>
+   <path d="M98 100 Q100 93 102 100" stroke="#1B1B1B" stroke-width="5" fill="none"/>
+   <path d="M57 100 L44 97 M143 100 L156 97" stroke="#1B1B1B" stroke-width="4.5" stroke-linecap="round"/>
+   <path d="M65 95 Q69 88 77 87 M109 95 Q113 88 121 87" stroke="#fff" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round"/>
+  </g>
+  <path d="M100 110 Q113 126 100 131 Q93 131 95 126" fill="#E2A97E"/>
+  <path class="c-mouth" d="M86 148 Q100 168 114 148 Q100 155 86 148Z" fill="#7A2430"/>
+  <path class="c-stache" d="M100 137 C90 129 74 129 64 139 C58 144 52 141 52 135 C50 149 72 155 100 143 C128 155 150 149 148 135 C148 141 142 144 136 139 C126 129 110 129 100 137Z" fill="#2B2B2B"/>
+  <g class="c-hat"><path d="M80 44 L106 -14 L130 40Z" fill="#FF6B9A"/><path d="M90 26 L120 22 M98 8 L114 6" stroke="#F5B82E" stroke-width="5" stroke-linecap="round"/><circle cx="106" cy="-16" r="7" fill="#F5B82E"/><path d="M80 44 Q104 50 130 40" stroke="#fff" stroke-width="4" fill="none"/></g>
+ </g>
+</svg>`;
+document.querySelectorAll('[data-ch]').forEach(el => el.innerHTML = CHASHMU);
+const chs = () => [...document.querySelectorAll('.ch')];
+function mood(cls, ms){ chs().forEach(e => { e.classList.remove(cls); void e.offsetWidth; e.classList.add(cls); }); if (ms) setTimeout(() => unmood(cls), ms); }
+function unmood(cls){ chs().forEach(e => e.classList.remove(cls)); }
+function screen(t){ document.querySelectorAll('.c-scr').forEach(s => s.textContent = t); }
+let sayT;
+function say(text, ms = 4200){
+  const docked = $('dock').classList.contains('on');
+  const b = docked ? $('dockBub') : $('heroBub');
+  b.textContent = text; b.classList.add('on');
+  mood('talk', Math.min(2400, 55 * text.length));
+  for (let i = 0; i < 3; i++) tone(520 + Math.random() * 260, .05, .025, 'square', i * .09);
+  clearTimeout(sayT);
+  if (docked) sayT = setTimeout(() => b.classList.remove('on'), ms);
+}
+/* eyes wander, specs get pushed up now and then */
+setInterval(() => {
+  const x = (Math.random() - .5) * 6, y = (Math.random() - .5) * 4;
+  document.querySelectorAll('.c-pups').forEach(p => p.style.transform = `translate(${x}px,${y}px)`);
+  if (Math.random() < .3) mood('push', 450);
+}, 2600);
+
+const ji = first + ' ji';
+const L = isCA ? {
+  hi: `Namaste! Main <b>Chashmu</b> 🤓 ${ji} ka Birthday Return file karna hai… aaj LAST DATE hai! 😰`,
+  hi2: 'Neeche wala button dabaa ke rakho. Calculation main karta hoon 🧮',
+  hold: 'Server slow hai… hold karo, hold karo! 😅',
+  drop: 'Arre! Session timeout ho gaya. Phir se dabao 🙈',
+  filed: 'FILED ✓ No late fee, no notice! 🥳',
+  cake: `${ji} ke cake pe bhi notices?! Phoonk maaro sabko! 💨`,
+  puffs: ['Due dates: gayab! 👋', 'Notices: cancel! ✂️', 'Mismatch: tally ho gaya ✓', 'Late fee: maaf! 🙏', 'Clients: silent mode pe 🤫'],
+  allout: 'Stress: NIL. Ab sirf cake! 🎂',
+  bill: 'Bill dekh lo… Total: Priceless. GST lagega hi nahi 😎',
+  pitch: 'Psst… mujhe hire karoge? Aapke clients ko bhi wish kar dunga 😉',
+  jokes: ['Aaj TDS ka full form: Total Dhamaal Sirf! 🎉', 'GST matlab: Great Smile Today 😁', 'ITC matlab: I Totally Celebrate! 🥳',
+    'Mera chashma? Itne ledgers dekh ke number badh gaya 🤓', 'Balance sheet tally ho gayi. Ab smile bhi tally karo!',
+    'Audit report: cake 100% verified. Opinion: tasty 😋', '31st March ko mat yaad dilao, aaj party hai! 🙉']
+} : {
+  hi: `Namaste! Main <b>Chashmu</b> 🤓 ${ji} ka Birthday Return file karna hai… aaj LAST DATE hai! 😰`,
+  hi2: 'Neeche wala button dabaa ke rakho. Calculation main karta hoon 🧮',
+  hold: 'Hold karo, hold karo… almost ho gaya! 😅',
+  drop: 'Arre! Chhod diya? Phir se dabao 🙈',
+  filed: 'FILED ✓ Ek saal aur, full happiness! 🥳',
+  cake: `${ji} ke cake pe tension wali candles?! Phoonk maaro! 💨`,
+  puffs: ['Gayab! 👋', 'Cancel! ✂️', 'Khatam! ✓', 'Bye bye! 🙏', 'Silent mode 🤫'],
+  allout: 'Tension: NIL. Ab sirf cake! 🎂',
+  bill: 'Bill dekh lo… Total: Priceless 😎',
+  pitch: 'Psst… kisi aur ka birthday aa raha hai? Main jaa sakta hoon 😉',
+  jokes: ['Mera chashma dekho, birthday special edition 🤓', 'Cake audit: 100% tasty 😋', 'Aaj no tension, sirf celebration! 🎉', 'Ek saal aur bade… par dil abhi bhi 18 ka 😁']
+};
+$('heroBub').innerHTML = L.hi.replace(/</g, '&lt;').replace(/&lt;(\/?)b>/g, '<$1b>');
+mood('wave', 2200);
+setTimeout(() => { if (!done && !t0) say(L.hi2); }, 4500);
+let jk = 0;
+document.querySelectorAll('.ch').forEach(c => c.addEventListener('click', () => {
+  mood('wow', 700); mood('push', 450); say(L.jokes[jk++ % L.jokes.length]);
+}));
+
+/* stress candles: CA flavour, or generic */
+const CANDLES = isCA
+  ? ['Due dates', 'Notices', 'ITC mismatch', 'Late fee', '"Sir, urgent!"']
+  : ['Deadlines', 'Traffic', 'Pending work', 'Bills', 'Monday'];
+const ITEMS = isCA ? [
+  ['Unlimited happiness', 'HSN 1711 · Birthday cake', 'Exempt'],
+  ['Good health all year', 'SAC 9993', 'Nil rated'],
+  ['Clients who pay on time', 'Rare supply', '0%'],
+  ['Zero scrutiny, zero notices', 'Sec 🎂 of the Joy Act', '0%'],
+  ['A long holiday after 31st March', 'Well deserved', 'Exempt']
+] : [
+  ['Unlimited happiness', 'Birthday special', 'Exempt'],
+  ['Good health all year', 'Essential', 'Nil rated'],
+  ['Success in everything you start', 'Top priority', '0%'],
+  ['Time with people you love', 'Non-negotiable', '0%']
+];
+$('items').innerHTML = ITEMS.map(() => '<tr><td></td><td class="r"></td></tr>').join('');
+[...$('items').rows].forEach((r, i) => {
+  r.cells[0].textContent = ITEMS[i][0];
+  const s = document.createElement('small'); s.textContent = ITEMS[i][1]; r.cells[0].appendChild(s);
+  r.cells[1].textContent = ITEMS[i][2];
+});
+$('wishMsg').textContent = isCA
+  ? `${first}, you keep everyone else's books balanced. Today the only thing to reconcile is cake. May this year bring zero mismatches, on-time payments, and enough free time to actually enjoy them.`
+  : `${first}, may this year bring good health, good work and good people. Today, no deadlines. Just cake.`;
+$('sendTitle').textContent = `Wish ${first} on WhatsApp`;
+$('sendSub').textContent = `Your wish goes straight to ${first}, with your name on it.`;
+$('sendBtnT').textContent = `Send my wish to ${first}`;
+
+$('candles').innerHTML = CANDLES.map(() => '<button class="cd"><span class="tag"></span><span class="fl"></span><span class="stick"></span></button>').join('');
+[...document.querySelectorAll('.cd')].forEach((c, i) => { c.querySelector('.tag').textContent = CANDLES[i]; c.setAttribute('aria-label', 'Blow out ' + CANDLES[i]); });
+
+/* ============ sound ============ */
+let AC;
+function tone(f, d = .15, v = .12, type = 'sine', when = 0){
+  try{
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const t0 = AC.currentTime + when, o = AC.createOscillator(), g = AC.createGain();
+    o.type = type; o.frequency.value = f;
+    g.gain.setValueAtTime(v, t0); g.gain.exponentialRampToValueAtTime(.0001, t0 + d);
+    o.connect(g).connect(AC.destination); o.start(t0); o.stop(t0 + d);
+  }catch(e){}
+}
+function thud(){ tone(90, .25, .35, 'triangle'); tone(60, .3, .3, 'sine', .02); }
+function puff(){ tone(320 + Math.random() * 80, .12, .06, 'triangle'); }
+function happyBirthday(){
+  const n = [[392,.3],[392,.15],[440,.45],[392,.45],[523,.45],[494,.9]];
+  let t = 0; n.forEach(([f, d]) => { tone(f, d * .95, .09, 'sine', t); tone(f * 2, d * .6, .03, 'sine', t); t += d; });
+}
+
+/* ============ confetti: ₹ % ✓ and colour ============ */
+const cv = $('fx'), cx = cv.getContext('2d'), DPR = Math.min(devicePixelRatio || 1, 2);
+let W, H, bits = [];
+function size(){ W = cv.width = innerWidth * DPR; H = cv.height = innerHeight * DPR; }
+size(); addEventListener('resize', size);
+const COLS = ['#F5B82E', '#FF6B9A', '#3FA9F5', '#1FBF7F', '#FFFFFF', '#D6334B'];
+const GLY = ['₹', '%', '✓', '🎂', '0'];
+function burst(x, y, n = 120, spread = 1){
+  for (let i = 0; i < n; i++){
+    const a = -Math.PI / 2 + (Math.random() - .5) * Math.PI * 1.4 * spread, s = (Math.random() * 9 + 5) * DPR;
+    bits.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, r: Math.random() * 6.28, vr: (Math.random() - .5) * .3,
+      c: COLS[i % COLS.length], g: Math.random() < .22 ? GLY[i % GLY.length] : null, w: (Math.random() * 6 + 5) * DPR, life: 1 });
+  }
+}
+(function loop(){
+  cx.clearRect(0, 0, W, H);
+  for (let i = bits.length - 1; i >= 0; i--){
+    const b = bits[i]; b.x += b.vx; b.y += b.vy; b.vy += .28 * DPR; b.vx *= .985; b.r += b.vr; b.life -= .006;
+    if (b.life <= 0 || b.y > H + 40){ bits.splice(i, 1); continue; }
+    cx.save(); cx.translate(b.x, b.y); cx.rotate(b.r); cx.globalAlpha = Math.min(1, b.life * 2);
+    if (b.g){ cx.font = `700 ${b.w * 2.2}px DM Sans, sans-serif`; cx.fillStyle = b.c; cx.textAlign = 'center'; cx.fillText(b.g, 0, 0); }
+    else { cx.fillStyle = b.c; cx.fillRect(-b.w / 2, -b.w / 4, b.w, b.w / 2); }
+    cx.restore();
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* ============ 1 · hold to file ============ */
+const hold = $('hold'), fill = $('fill');
+const STEPS = ['Validating smiles…', 'Matching wishes with GSTR-2B…', 'Reconciling cake ITC…', 'Generating ARN…'];
+const MS = 2000; let t0 = 0, raf = 0, done = false, calcT = 0;
+function start(e){
+  if (done) return; e.preventDefault(); t0 = performance.now(); $('holdLbl').textContent = 'Filing… keep holding';
+  say(L.hold); mood('type'); mood('wow');
+  clearInterval(calcT); calcT = setInterval(() => screen(String(Math.floor(Math.random() * 99999))), 90);
+  const tick = n => {
+    const p = Math.min((n - t0) / MS, 1);
+    fill.style.width = (p * 100) + '%';
+    $('status').textContent = STEPS[Math.min(STEPS.length - 1, Math.floor(p * STEPS.length))];
+    if (p >= 1) return filed();
+    raf = requestAnimationFrame(tick);
+  };
+  raf = requestAnimationFrame(tick);
+}
+function stop(){
+  if (done || !t0) return; cancelAnimationFrame(raf); t0 = 0;
+  fill.style.transition = 'width .3s'; fill.style.width = '0'; setTimeout(() => fill.style.transition = '', 300);
+  $('holdLbl').textContent = '✋ Press & hold to file';
+  $('status').textContent = 'Session timed out. Just like the portal 😅 Hold a bit longer.';
+  clearInterval(calcT); screen('₹0'); unmood('type'); unmood('wow'); say(L.drop);
+}
+hold.addEventListener('pointerdown', start);
+['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => hold.addEventListener(ev, stop));
+hold.addEventListener('contextmenu', e => e.preventDefault());
+hold.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) start(e); });
+hold.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') stop(); });
+
+function filed(){
+  done = true; t0 = 0;
+  clearInterval(calcT); screen('HBD!'); unmood('type'); unmood('wow');
+  mood('party'); mood('jump', 1200); mood('wave', 2200); say(L.filed);
+  $('form').classList.add('filed'); $('badge').textContent = 'FILED';
+  $('status').textContent = 'Filed on time. No late fee. Happy birthday!';
+  if (navigator.vibrate) navigator.vibrate([30, 40, 60]);
+  thud();
+  const r = $('form').getBoundingClientRect();
+  setTimeout(() => burst((r.left + r.width / 2) * DPR, (r.top + 120) * DPR, 140), 200);
+  setTimeout(() => { $('s2').classList.add('on'); $('s2').scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 1400);
+  setTimeout(() => { $('dock').classList.add('on'); setTimeout(() => say(L.cake), 500); }, 2000);
+  updateCount();
+}
+
+/* ============ 2 · candles ============ */
+let out = 0;
+function updateCount(){ $('count').textContent = out < CANDLES.length ? `${CANDLES.length - out} stress candle${CANDLES.length - out > 1 ? 's' : ''} left` : 'All clear. Stress: NIL ✓'; }
+document.querySelectorAll('.cd').forEach(c => c.addEventListener('click', () => {
+  if (c.classList.contains('out')) return;
+  c.classList.add('out'); out++; puff(); updateCount();
+  if (out < CANDLES.length){ say(L.puffs[(out - 1) % L.puffs.length], 2200); mood('push', 400); }
+  if (navigator.vibrate) navigator.vibrate(15);
+  if (out === CANDLES.length) allOut();
+}));
+function allOut(){
+  happyBirthday(); say(L.allout); mood('jump', 1200); mood('wave', 2200);
+  setTimeout(() => say(L.bill, 5000), 4200);
+  setTimeout(() => {
+    burst(W * .2, H * .9, 90, .6); burst(W * .8, H * .9, 90, .6);
+    $('s3').classList.add('on'); $('s4').classList.add('on');
+    $('s3').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 700);
+}
+
+/* ============ 4 · WhatsApp actions ============ */
+const shareBase = CONFIG.baseUrl || (location.origin + location.pathname);
+$('sendBtn').addEventListener('click', e => {
+  const me = clean($('me').value);
+  if (!me){ e.preventDefault(); $('err1').textContent = 'Please add your name so ' + first + ' knows who it is from.'; return; }
+  $('err1').textContent = ''; store.set('bd_me', me);
+  const w = $('myWish').value.trim().slice(0, 120);
+  const msg = `🎂 Happy Birthday ${first}!\nYour Birthday Return is filed. No late fee, no notice, just cake.` + (w ? `\n\n${w}` : '') + `\n\n— ${me}`;
+  $('sendBtn').href = 'https://wa.me/' + CONFIG.birthdayWhatsApp + '?text=' + encodeURIComponent(msg);
+});
+$('passBtn').addEventListener('click', e => {
+  const me = clean($('me').value) || first, them = clean($('them').value), role = clean($('themRole').value);
+  if (!them){ e.preventDefault(); $('err2').textContent = 'Please add their name.'; return; }
+  $('err2').textContent = '';
+  const q = new URLSearchParams({ name: them, from: me }); if (role) q.set('role', role);
+  const link = shareBase + '?' + q.toString();
+  const msg = `🎂 ${them}, your Birthday Return is due today! Open it and file it yourself:\n${link}`;
+  $('passBtn').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+});
+$('clBtn').addEventListener('click', () => {
+  const me = clean($('me').value);
+  const msg = `Hi Viplav, I saw the Birthday Return greeting for ${first}. I'd like one made.\nName: ${me}\nFor: personal / my business\nProfession or occasion: `;
+  $('clBtn').href = 'https://wa.me/' + CONFIG.comedgeWhatsApp + '?text=' + encodeURIComponent(msg);
+});
+
+/* Chashmu pitches once, only when the Chat Lead card comes into view */
+let pitched = false;
+if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting && !pitched && $('s4').classList.contains('on')){ pitched = true; mood('push', 450); say(L.pitch, 5500); }
+}), { threshold: .6 }).observe(document.querySelector('.cl'));
+
+/* replay */
+$('replay').onclick = () => {
+  done = false; out = 0; fill.style.width = '0';
+  $('form').classList.remove('filed'); $('badge').textContent = 'DUE TODAY';
+  $('holdLbl').textContent = '✋ Press & hold to file'; $('status').textContent = 'Takes 2 seconds. Faster than the real portal 😉';
+  document.querySelectorAll('.cd').forEach(c => c.classList.remove('out'));
+  ['s2', 's3', 's4'].forEach(id => $(id).classList.remove('on'));
+  unmood('party'); screen('₹0'); $('dock').classList.remove('on'); $('dockBub').classList.remove('on'); say(L.hi2);
+  scrollTo({ top: 0, behavior: 'smooth' });
+};
+</script>
+</body>
+</html>
